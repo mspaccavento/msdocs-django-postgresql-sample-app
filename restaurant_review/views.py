@@ -54,6 +54,7 @@ def add_review(request, id):
         user_name = request.POST['user_name']
         rating = request.POST['rating']
         review_text = request.POST['review_text']
+        review_extra = request.POST['review_extra']
     except (KeyError):
         # Redisplay the form.
         return render(request, 'restaurant_review/add_review.html', {

@@ -44,6 +44,7 @@
                     <th>User</th>
                     <th>Rating</th>
                     <th>Review</th>
+                    <th>Extra</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,7 @@
                         <td>{{ review.user_name }}</td>
                         <td>{{ review.rating }}</td>
                         <td>{{ review.review_text }}</td>
+                        <td>{{ review.review_extra }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -105,6 +107,10 @@
                       <label for="review_text" class="form-label fw-bold">Comments</label>
                       <input type="text" class="form-control" id="review_text" name="review_text">
                   </div>
+                  <div class="mb-3">
+                    <label for="review_extra" class="form-label fw-bold">Extra</label>
+                    <input type="text" class="form-control" id="review_extra" name="review_extra">
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
