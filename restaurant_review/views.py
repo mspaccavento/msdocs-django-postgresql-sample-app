@@ -67,6 +67,7 @@ def add_review(request, id):
         review.user_name = user_name
         review.rating = rating
         review.review_text = review_text
+        review.review_extra = review_extra
         Review.save(review)
 
     return HttpResponseRedirect(reverse('details', args=(id,)))
