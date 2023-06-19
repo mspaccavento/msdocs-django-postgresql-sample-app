@@ -5,6 +5,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
+from django.http import JsonResponse
+
 from restaurant_review.models import Restaurant, Review
 
 # Create your views here.
@@ -71,3 +73,9 @@ def add_review(request, id):
         Review.save(review)
 
     return HttpResponseRedirect(reverse('details', args=(id,)))
+
+
+def jtest(request):
+    print('Request for json test received')
+    testData = {'key':'value'}
+    return JsonResponse(testData)
