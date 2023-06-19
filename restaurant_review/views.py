@@ -77,5 +77,5 @@ def add_review(request, id):
 
 def jtest(request):
     print('Request for json test received')
-    testData = {'key':'value'}
-    return JsonResponse(testData)
+    testData = list(Restaurant.objects.values())
+    return JsonResponse(testData, safe = False)
