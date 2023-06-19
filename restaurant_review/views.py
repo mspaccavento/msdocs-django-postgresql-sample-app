@@ -34,6 +34,7 @@ def add_restaurant(request):
         name = request.POST['restaurant_name']
         street_address = request.POST['street_address']
         description = request.POST['description']
+        main_image = request.FILES['main_image']
     except (KeyError):
         # Redisplay the form
         return render(request, 'restaurant_review/add_restaurant.html', {
@@ -44,6 +45,7 @@ def add_restaurant(request):
         restaurant.name = name
         restaurant.street_address = street_address
         restaurant.description = description
+        restaurant.main_image = main_image
         Restaurant.save(restaurant)
 
         return HttpResponseRedirect(reverse('details', args=(restaurant.id,)))
